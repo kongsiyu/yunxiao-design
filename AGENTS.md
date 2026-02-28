@@ -210,3 +210,55 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+---
+
+## yunxiao-cli 项目规范
+
+### 工作方式
+
+1. **任务来源**: 只根据 GitHub Issue 干活，不凭空创造任务
+   - 所有开发任务必须对应一个 Issue
+   - Issue 优先级：T0 > T1 > T2 > T3
+   - Roadmap 在 README.md 中维护
+
+2. **Coding 工具**: 使用 Claude Code (`claude` 命令，PTY 模式)
+   - 参考 `coding-agent` skill
+   - 复杂任务用后台模式：`claude '任务描述'`
+   - 简单修改直接编辑文件
+
+3. **Issue 流程**:
+   - 开发前确认 Issue 编号
+   - 分支命名：`feat/<编号>-描述` 或 `fix/<编号>-描述`
+   - PR 必须关联 Issue (`Fixes #编号`)
+   - 完成后更新 README Roadmap 状态为 ✅
+
+4. **提交前检查**:
+   - [ ] CI 通过（GitHub Actions）
+   - [ ] 功能已测试
+   - [ ] 文档已更新（README/CONTRIBUTING）
+   - [ ] Commit 信息规范：`<类型>: <描述>`
+
+5. **文档位置**:
+   - 项目规范：`CONTRIBUTING.md`
+   - Roadmap: `README.md` 底部
+   - API 说明：`README.md` 中
+
+### 快速参考
+
+```bash
+# 查看 Issue 列表
+gh issue list
+
+# 创建新 Issue
+gh issue create --title "T1: 功能描述" --body "## 描述\n\n## API\n\n## 示例"
+
+# 创建分支
+git checkout -b feat/4-workitem-details
+
+# 提交
+git commit -m "feat: add workitem details view"
+
+# 创建 PR
+gh pr create --title "feat: add workitem details view" --body "Fixes #4"
+```
