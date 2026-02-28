@@ -1,40 +1,45 @@
-# TOOLS.md - Local Notes
+# TOOLS.md - 云效开发环境配置
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+## 云效认证配置
 
-## What Goes Here
+### 环境变量
 
-Things like:
+| 变量名 | 必填 | 说明 |
+|--------|------|------|
+| `YUNXIAO_PAT` | ✅ | 云效个人访问令牌 |
+| `YUNXIAO_ORG_ID` | ✅ | 组织 ID |
+| `YUNXIAO_PROJECT_ID` | 可选 | 默认项目 ID |
+| `YUNXIAO_USER_ID` | 可选 | 当前用户 ID |
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+### 配置位置
 
-## Examples
+- **CLI 项目** (`cli/`): 从系统环境变量读取
+- **Design 项目** (`design/`): 从 `design/.env.ps1` 读取
 
-```markdown
-### Cameras
+### 获取 PAT
 
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+https://help.aliyun.com/zh/yunxiao/developer-reference/obtain-personal-access-token
 
 ---
 
-Add whatever helps you do your job. This is your cheat sheet.
+## 本地开发
+
+### CLI 调试
+```bash
+cd cli
+node src/index.js [command]
+```
+
+### Design 脚本调试
+```bash
+cd design
+python yunxiao_config.py  # 配置向导
+python check-requirements.py
+```
+
+---
+
+## 相关资源
+
+- [云效 API 文档](https://help.aliyun.com/zh/yunxiao/developer-reference/)
+- [OpenClaw 文档](https://docs.openclaw.ai)
