@@ -1,100 +1,81 @@
-# äº‘æ•ˆéœ€æ±‚è®¾è®¡è‡ªåŠ¨åŒ– - âœ… å·²å®Œæˆ
+# ÔÆĞ§×Ô¶¯»¯¹¤¾ß¼¯ (Yunxiao Automation)
 
-## âœ… å½“å‰åŠŸèƒ½
+> ÔÆĞ§ CLI ¹¤¾ß + OpenClaw Agent ¼¯³É
 
-### è‡ªåŠ¨æ£€æŸ¥"è®¾è®¡ä¸­"éœ€æ±‚
-```bash
+## ?? ÏîÄ¿½á¹¹
+
+``
+yunxiao/
+©À©¤©¤ cli/                    # ÔÆĞ§ CLI ¹¤¾ß (Node.js)
+©¦   ©À©¤©¤ src/               # Ô´´úÂë
+©¦   ©À©¤©¤ package.json       # ÒÀÀµÅäÖÃ
+©¦   ©À©¤©¤ SKILL.md           # ¼¼ÄÜËµÃ÷
+©¦   ©¸©¤©¤ README.md          # CLI Ê¹ÓÃÎÄµµ
+©¦
+©À©¤©¤ agent/                 # OpenClaw Agent ÅäÖÃ
+©¦   ©À©¤©¤ AGENTS.md          # Agent ĞĞÎªÖ¸ÄÏ
+©¦   ©À©¤©¤ SOUL.md            # Agent ÈË¸ñ¶¨Òå
+©¦   ©À©¤©¤ USER.md            # ÓÃ»§ĞÅÏ¢
+©¦   ©¸©¤©¤ ...                # ÆäËûÅäÖÃÎÄ¼ş
+©¦
+©À©¤©¤ designs/               # Éú³ÉµÄÉè¼ÆÎÄµµ
+©À©¤©¤ check-requirements.py  # ĞèÇó¼ì²é½Å±¾
+©À©¤©¤ check-reviews.py       # ÆÀÉó¼ì²é½Å±¾
+©À©¤©¤ review-flow.py         # ÆÀÉóÁ÷³Ì½Å±¾
+©À©¤©¤ yunxiao_config.py      # ½»»¥Ê½ÅäÖÃ¹¤¾ß
+©¸©¤©¤ README.md              # ±¾ÎÄ¼ş
+``
+
+---
+
+## ??? CLI ¹¤¾ß
+
+ÔÆĞ§ÃüÁîĞĞ¹¤¾ß£¬Ìá¹©ÀàËÆ \gh auth\ µÄ½»»¥Ê½ÅäÖÃÌåÑé¡£
+
+### °²×°
+\\\ash
+cd cli
+npm install
+\\\
+
+### ÅäÖÃ
+\\\ash
+# ½»»¥Ê½ÅäÖÃ£¨ÍÆ¼ö£©
+python ../yunxiao_config.py
+
+# »òÊÖ¶¯ÉèÖÃ»·¾³±äÁ¿
+\ = "pt-xxxxx"
+\ = "devops.aliyun.com"
+\ = "xxxxx"
+\\\
+
+### ¹¦ÄÜ
+- ?? ½»»¥Ê½ÈÏÖ¤ÅäÖÃ
+- ?? ×éÖ¯Ñ¡ÔñÓë¹ÜÀí
+- ?? ĞèÇó/¹¤×÷Ïî¹ÜÀí
+- ?? ÆÀÉóÁ÷³Ì×Ô¶¯»¯
+
+Ïê¼û£º[cli/README.md](cli/README.md)
+
+---
+
+## ?? OpenClaw Agent
+
+»ùÓÚ OpenClaw µÄÖÇÄÜÖúÊÖ£¬×Ô¶¯»¯´¦ÀíÔÆĞ§ĞèÇó¡£
+
+### µ±Ç°¹¦ÄÜ
+
+#### ×Ô¶¯¼ì²é"Éè¼ÆÖĞ"ĞèÇó
+\\\ash
 python check-requirements.py
-```
+\\\
 
-è¾“å‡ºç¤ºä¾‹ï¼š
-```
-=== Yunxiao Design Check ===
-Time: 2026-02-25 15:50:48
-Org: 6385eb9c126bcb821717de64
-Project: 123ac8b1bfd6691a99b64ea66d
-Status Filter: Designing (156603)
+Ïê¼ûÔ­ÓĞ README ÄÚÈİ...
 
-Found: 1 requirements in 'Designing' status
+---
 
-[GJBL-1] ä¸º openclaw æ·»åŠ ä¸€ä¸ª codeup çš„ skills
-  Saved: GJBL-1-20260225-155049-prd.md
-  Description updated: 1706 chars
-  [NOTIFY] PRD generated and synced for GJBL-1
+## ?? Ïà¹ØÁ´½Ó
 
-=== Check Completed ===
-Processed: 1 requirements
-```
-
-### å·¥ä½œæµç¨‹
-1. **æ£€æŸ¥äº‘æ•ˆ** - è·å–çŠ¶æ€ä¸º"è®¾è®¡ä¸­"çš„éœ€æ±‚
-2. **AI åˆ†æ** - æ ¹æ®éœ€æ±‚æ ‡é¢˜å’Œæè¿°ç”Ÿæˆå®Œæ•´ PRD
-3. **ä¿å­˜æœ¬åœ°** - è®¾è®¡æ–‡æ¡£ä¿å­˜åˆ° `designs/` ç›®å½•
-4. **åŒæ­¥äº‘æ•ˆ** - å°† PRD å†…å®¹æ›´æ–°åˆ°äº‘æ•ˆéœ€æ±‚æè¿°å­—æ®µ
-
-### è®¾è®¡æ–‡æ¡£æ¨¡æ¿
-- éœ€æ±‚åŸºæœ¬ä¿¡æ¯ï¼ˆç¼–å·ã€IDã€æ ‡é¢˜ã€çŠ¶æ€ã€è´Ÿè´£äººç­‰ï¼‰
-- èƒŒæ™¯ä¸ç›®æ ‡
-- ç”¨æˆ·æ•…äº‹
-- åŠŸèƒ½è®¾è®¡ï¼ˆæ ¸å¿ƒåŠŸèƒ½ã€ä¸šåŠ¡æµç¨‹ã€ç•Œé¢è®¾è®¡ï¼‰
-- éªŒæ”¶æ ‡å‡†
-- æŠ€æœ¯è€ƒè™‘
-- è¯„å®¡è®°å½•
-
-## â³ å¾…å®Œå–„åŠŸèƒ½
-
-1. **å®šæ—¶ä»»åŠ¡** - æ¯ 5 åˆ†é’Ÿè‡ªåŠ¨è¿è¡Œï¼ˆcron/Windows ä»»åŠ¡è®¡åˆ’ï¼‰
-2. **é™„ä»¶ä¸Šä¼ ** - äº‘æ•ˆ API ä¸æ”¯æŒï¼ˆå·²æ”¾å¼ƒï¼‰
-3. **è¯„å®¡äººé€šçŸ¥** - äº‘æ•ˆ API ä¸æ”¯æŒï¼ˆå·²æ”¾å¼ƒï¼‰
-
-## ğŸ“ é¡¹ç›®ç»“æ„
-```
-yunxiao-design/
-â”œâ”€â”€ .env.ps1              # API é…ç½®ï¼ˆæ•æ„Ÿä¿¡æ¯ï¼‰
-â”œâ”€â”€ check-requirements.py # ä¸»è„šæœ¬ï¼ˆPythonï¼‰
-â”œâ”€â”€ check-requirements.ps1 # ä¸»è„šæœ¬ï¼ˆPowerShellï¼Œå¤‡ç”¨ï¼‰
-â”œâ”€â”€ cron-config.md        # å®šæ—¶ä»»åŠ¡é…ç½®æŒ‡å—
-â”œâ”€â”€ design-logic.md       # è®¾è®¡é€»è¾‘è¯´æ˜
-â”œâ”€â”€ README.md             # é¡¹ç›®è¯´æ˜
-â””â”€â”€ designs/              # ç”Ÿæˆçš„è®¾è®¡æ–‡æ¡£
-```
-
-## ğŸš€ è®¾ç½®å®šæ—¶ä»»åŠ¡
-
-### Windows ä»»åŠ¡è®¡åˆ’ç¨‹åº
-```powershell
-# ä»¥ç®¡ç†å‘˜èº«ä»½è¿è¡Œ PowerShell
-
-$taskName = "YunxiaoDesignCheck"
-$scriptPath = "C:\Users\boil\.openclaw\workspace\yunxiao-design\check-requirements.py"
-$pythonExe = "python"
-
-$action = New-ScheduledTaskAction -Execute $pythonExe -Argument "`"$scriptPath`""
-$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 5) -RepetitionDuration ([TimeSpan]::MaxValue)
-$principal = New-ScheduledTaskPrincipal -UserId "$env:USERNAME" -LogonType S4U -RunLevel Highest
-
-Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Principal $principal -Description "äº‘æ•ˆéœ€æ±‚è®¾è®¡è‡ªåŠ¨åŒ–æ£€æŸ¥"
-```
-
-### ç®¡ç†å‘½ä»¤
-```powershell
-# æŸ¥çœ‹ä»»åŠ¡
-Get-ScheduledTask -TaskName "YunxiaoDesignCheck"
-
-# æ‰‹åŠ¨è§¦å‘æµ‹è¯•
-Start-ScheduledTask -TaskName "YunxiaoDesignCheck"
-
-# æŸ¥çœ‹è¿è¡Œå†å²
-Get-ScheduledTaskInfo -TaskName "YunxiaoDesignCheck"
-
-# åˆ é™¤ä»»åŠ¡
-Unregister-ScheduledTask -TaskName "YunxiaoDesignCheck" -Confirm:$false
-```
-
-## ğŸ“Š æµ‹è¯•ç»“æœ
-- âœ… API è°ƒç”¨æ­£å¸¸
-- âœ… çŠ¶æ€è¿‡æ»¤æ­£å¸¸ï¼ˆDesigning: 156603ï¼‰
-- âœ… éœ€æ±‚åˆ—è¡¨è·å–æ­£å¸¸
-- âœ… éœ€æ±‚è¯¦æƒ…è·å–æ­£å¸¸
-- âœ… è®¾è®¡æ–‡æ¡£ç”Ÿæˆæ­£å¸¸
-- âœ… äº‘æ•ˆæè¿°æ›´æ–°æ­£å¸¸
+- [ÔÆĞ§ API ÎÄµµ](https://help.aliyun.com/zh/yunxiao/developer-reference/)
+- [OpenClaw ÎÄµµ](https://docs.openclaw.ai)
+- [GitHub ²Ö¿â](https://github.com/kongsiyu/yunxiao-design)
