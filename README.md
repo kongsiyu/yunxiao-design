@@ -1,81 +1,82 @@
-# ÔÆĞ§×Ô¶¯»¯¹¤¾ß¼¯ (Yunxiao Automation)
+# äº‘æ•ˆå·¥ä½œå° (Yunxiao Workspace)
 
-> ÔÆĞ§ CLI ¹¤¾ß + OpenClaw Agent ¼¯³É
+> é˜¿é‡Œäº‘äº‘æ•ˆ DevOps å¹³å°å¯¹æ¥ä¸è‡ªåŠ¨åŒ–å·¥å…·é›†
 
-## ?? ÏîÄ¿½á¹¹
+## é¡¹ç›®ç»“æ„
 
-``
+```
 yunxiao/
-©À©¤©¤ cli/                    # ÔÆĞ§ CLI ¹¤¾ß (Node.js)
-©¦   ©À©¤©¤ src/               # Ô´´úÂë
-©¦   ©À©¤©¤ package.json       # ÒÀÀµÅäÖÃ
-©¦   ©À©¤©¤ SKILL.md           # ¼¼ÄÜËµÃ÷
-©¦   ©¸©¤©¤ README.md          # CLI Ê¹ÓÃÎÄµµ
-©¦
-©À©¤©¤ agent/                 # OpenClaw Agent ÅäÖÃ
-©¦   ©À©¤©¤ AGENTS.md          # Agent ĞĞÎªÖ¸ÄÏ
-©¦   ©À©¤©¤ SOUL.md            # Agent ÈË¸ñ¶¨Òå
-©¦   ©À©¤©¤ USER.md            # ÓÃ»§ĞÅÏ¢
-©¦   ©¸©¤©¤ ...                # ÆäËûÅäÖÃÎÄ¼ş
-©¦
-©À©¤©¤ designs/               # Éú³ÉµÄÉè¼ÆÎÄµµ
-©À©¤©¤ check-requirements.py  # ĞèÇó¼ì²é½Å±¾
-©À©¤©¤ check-reviews.py       # ÆÀÉó¼ì²é½Å±¾
-©À©¤©¤ review-flow.py         # ÆÀÉóÁ÷³Ì½Å±¾
-©À©¤©¤ yunxiao_config.py      # ½»»¥Ê½ÅäÖÃ¹¤¾ß
-©¸©¤©¤ README.md              # ±¾ÎÄ¼ş
-``
+â”œâ”€â”€ README.md              # æœ¬æ–‡ä»¶ - äº‘æ•ˆæ•´ä½“è¯´æ˜
+â”œâ”€â”€ AGENTS.md              # Agent è¡Œä¸ºæŒ‡å—
+â”œâ”€â”€ SOUL.md                # Agent äººæ ¼å®šä¹‰
+â”œâ”€â”€ USER.md                # ç”¨æˆ·ä¿¡æ¯
+â”œâ”€â”€ IDENTITY.md            # èº«ä»½å®šä¹‰
+â”œâ”€â”€ TOOLS.md               # å·¥å…·é…ç½®
+â”œâ”€â”€ memory/                # Agent è®°å¿†
+â”‚
+â”œâ”€â”€ cli/                   # ã€é¡¹ç›® 1ã€‘äº‘æ•ˆ CLI å·¥å…·
+â”‚   â”œâ”€â”€ src/               # æºä»£ç  (Node.js)
+â”‚   â”œâ”€â”€ package.json
+â”‚   â”œâ”€â”€ README.md          # CLI ä½¿ç”¨æ–‡æ¡£
+â”‚   â””â”€â”€ SKILL.md           # OpenClaw Skill å®šä¹‰
+â”‚
+â””â”€â”€ design/                # ã€é¡¹ç›® 2ã€‘è‡ªåŠ¨åŒ–è„šæœ¬ä¸è®¾è®¡
+    â”œâ”€â”€ *.py               # Python è‡ªåŠ¨åŒ–è„šæœ¬
+    â”œâ”€â”€ *.ps1              # PowerShell è¾…åŠ©è„šæœ¬
+    â”œâ”€â”€ designs/           # ç”Ÿæˆçš„è®¾è®¡æ–‡æ¡£ (PRD)
+    â”œâ”€â”€ memory/            # design å­é¡¹ç›®è®°å¿†
+    â””â”€â”€ README.md          # design é¡¹ç›®è¯´æ˜
+```
 
 ---
 
-## ??? CLI ¹¤¾ß
+## å¿«é€Ÿå¼€å§‹
 
-ÔÆĞ§ÃüÁîĞĞ¹¤¾ß£¬Ìá¹©ÀàËÆ \gh auth\ µÄ½»»¥Ê½ÅäÖÃÌåÑé¡£
+### CLI å·¥å…·
 
-### °²×°
-\\\ash
+```bash
 cd cli
 npm install
-\\\
+npm link          # å…¨å±€å®‰è£… yunxiao å‘½ä»¤
+yunxiao --help    # æŸ¥çœ‹å¯ç”¨å‘½ä»¤
+```
 
-### ÅäÖÃ
-\\\ash
-# ½»»¥Ê½ÅäÖÃ£¨ÍÆ¼ö£©
-python ../yunxiao_config.py
+è¯¦è§ï¼š[cli/README.md](cli/README.md)
 
-# »òÊÖ¶¯ÉèÖÃ»·¾³±äÁ¿
-\ = "pt-xxxxx"
-\ = "devops.aliyun.com"
-\ = "xxxxx"
-\\\
+### è‡ªåŠ¨åŒ–è„šæœ¬
 
-### ¹¦ÄÜ
-- ?? ½»»¥Ê½ÈÏÖ¤ÅäÖÃ
-- ?? ×éÖ¯Ñ¡ÔñÓë¹ÜÀí
-- ?? ĞèÇó/¹¤×÷Ïî¹ÜÀí
-- ?? ÆÀÉóÁ÷³Ì×Ô¶¯»¯
+```bash
+cd design
+python yunxiao_config.py    # é…ç½®å‘å¯¼
+python check-requirements.py  # æ£€æŸ¥éœ€æ±‚
+python review-flow.py        # è¯„å®¡æµç¨‹
+```
 
-Ïê¼û£º[cli/README.md](cli/README.md)
+è¯¦è§ï¼š[design/README.md](design/README.md)
 
 ---
 
-## ?? OpenClaw Agent
+## äº‘æ•ˆ API åŸºç¡€
 
-»ùÓÚ OpenClaw µÄÖÇÄÜÖúÊÖ£¬×Ô¶¯»¯´¦ÀíÔÆĞ§ĞèÇó¡£
+**åŸºç¡€ URL:** `https://openapi-rdc.aliyuncs.com`
 
-### µ±Ç°¹¦ÄÜ
+**è®¤è¯æ–¹å¼:** Personal Access Token (PAT)
 
-#### ×Ô¶¯¼ì²é"Éè¼ÆÖĞ"ĞèÇó
-\\\ash
-python check-requirements.py
-\\\
+**è·å– PAT:** https://help.aliyun.com/zh/yunxiao/developer-reference/obtain-personal-access-token
 
-Ïê¼ûÔ­ÓĞ README ÄÚÈİ...
+**æ ¸å¿ƒæ¥å£:**
+
+| åŠŸèƒ½ | Method | è·¯å¾„ |
+|------|--------|------|
+| é¡¹ç›®æœç´¢ | POST | `/oapi/v1/projex/organizations/{orgId}/projects:search` |
+| å·¥ä½œé¡¹æœç´¢ | POST | `/oapi/v1/projex/organizations/{orgId}/workitems:search` |
+| åˆ›å»ºå·¥ä½œé¡¹ | POST | `/oapi/v1/projex/organizations/{orgId}/workitems` |
+| æ·»åŠ è¯„è®º | POST | `/oapi/v1/projex/organizations/{orgId}/workitems/{id}/comments` |
 
 ---
 
-## ?? Ïà¹ØÁ´½Ó
+## ç›¸å…³èµ„æº
 
-- [ÔÆĞ§ API ÎÄµµ](https://help.aliyun.com/zh/yunxiao/developer-reference/)
-- [OpenClaw ÎÄµµ](https://docs.openclaw.ai)
-- [GitHub ²Ö¿â](https://github.com/kongsiyu/yunxiao-design)
+- [äº‘æ•ˆ API æ–‡æ¡£](https://help.aliyun.com/zh/yunxiao/developer-reference/)
+- [OpenClaw æ–‡æ¡£](https://docs.openclaw.ai)
+- [GitHub ä»“åº“](https://github.com/kongsiyu/yunxiao-design)
