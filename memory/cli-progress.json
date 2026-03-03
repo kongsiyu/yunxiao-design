@@ -1,0 +1,27 @@
+{
+  "project": "yunxiao-cli",
+  "repo": "kongsiyu/yunxiao-cli",
+  "lastCheck": "2026-03-03T16:45:00+08:00",
+  "completed": [
+    { "issue": 1, "title": "Interactive auth", "doneAt": "2026-02-28" },
+    { "issue": 3, "title": "GitHub Actions CI", "doneAt": "2026-02-28" },
+    { "issue": 4, "title": "Enhance workitem view", "pr": 16, "doneAt": "2026-02-28" },
+    { "issue": 5, "title": "Flexible workitem ID resolution", "doneAt": "2026-02-28" },
+    { "issue": 6, "title": "JSON input support", "pr": 17, "doneAt": "2026-02-28" },
+    { "issue": 7, "title": "Sprint/iteration management commands", "doneAt": "2026-03-03" },
+    { "issue": 8, "title": "User search and list commands", "doneAt": "2026-03-03" },
+    { "issue": 9, "title": "Status list command", "doneAt": "2026-03-03" },
+    { "issue": 10, "title": "Workitem delete and link commands", "doneAt": "2026-03-03" },
+    { "issue": 11, "title": "Comment edit/delete commands", "doneAt": "2026-03-03" },
+    { "issue": 12, "title": "Attachment management commands", "doneAt": "2026-03-03" },
+    { "issue": 1, "title": "优化云效 CLI 环境变量配置流程 - 支持交互式认证和组织选择", "doneAt": "2026-03-03", "note": "Already implemented in master (yunxiao auth login/status/logout)" }
+  ],
+  "inProgress": {
+    "issue": 13,
+    "title": "Advanced search and saved queries",
+    "branch": "feat/13-advanced-search",
+    "startedAt": "2026-03-03T16:50:00+08:00"
+  },
+  "pending": [],
+  "lastReport": "2026-03-03T16:50:00+08:00"
+}
